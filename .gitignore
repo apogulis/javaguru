@@ -3,3 +3,4 @@ out
 javaguru.*
 .gradle
 build
+/src/lv/
