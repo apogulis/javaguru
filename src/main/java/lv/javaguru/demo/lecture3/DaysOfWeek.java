@@ -4,7 +4,7 @@ public class DaysOfWeek {
 
     public static void main(String[] args) {
 
-        int diena = 10;
+        int diena = 3;
 
         switch (diena) {
             case (1):
