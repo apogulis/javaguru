@@ -1,34 +1,23 @@
 package lv.javaguru.demo.lecture4;
 import java.util.Random;
 
-/*public class ArrayService {
+public class ArrayService {
     public static void main(String[] args) {
-        public int[] create(int size) {
-            int[] size = new int[9];
+
+        int[] array = new int[5]; {
         }
-        public void fillRandomly(int[] array) {
-            Random randomSize = new Random();
-            for(int i=0; i<size.length; i++) {
-                size[i] = randomSize.nextInt();
-                System.out.println("Random numbers are:" + randomSize);
+        Random randomNumbers = new Random();
+            for(int i=0; i<array.length; i++) {
+                array[i] = randomNumbers.nextInt((100 - 1) + 1) + 1;
+                System.out.println("Random number is:" + array[i]);
             }
-        }
-        public void printArray(int[] array) {
-            for (int i = 0; i<size.length; i++) {
-                System.out.println(size[i]);
-            }
-        }
-        public int sum(int[] array) {
-            int sum = 0;
-            for (int i : size) {
+        int sum = 0;
+            for (int i : array) {
                 sum += i;
-                System.out.println("Sum is:" + sum);
             }
-        }
-        public double avg(int[] array) {
-            double avgSum = sum/size.length;
-            System.out.println("Average is:" + avgSum);
-        }
+        System.out.println("Sum is:" + sum);
+
+        double averageSum = (double)sum/array.length;
+            System.out.println("Average is:" + averageSum);
     }
 }
-*/
