@@ -4,11 +4,11 @@ import java.util.Random;
 public class ArrayService {
     public static void main(String[] args) {
 
-        int[] array = new int[5]; {
-        }
-        Random randomNumbers = new Random();
+        int[] array = new int[5];
+
+        Random fillRandomly = new Random();
             for(int i=0; i<array.length; i++) {
-                array[i] = randomNumbers.nextInt((100 - 1) + 1) + 1;
+                array[i] = fillRandomly.nextInt((100 - 1) + 1) + 1;
                 System.out.println("Random number is:" + array[i]);
             }
         int sum = 0;
