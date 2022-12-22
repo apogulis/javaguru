@@ -7,7 +7,6 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.StaleElementReferenceException;
 
 public class WebMulticopterTest {
     private static WebDriver driver;
@@ -46,15 +45,15 @@ public class WebMulticopterTest {
         WebElement submitButton = driver.findElement(By.xpath("//*[@class='b s12']"));
         submitButton.click();
 
-        WebElement getActualManufacturer = driver.findElement(By.id(manufacturerLocator));
-        String actualManufacturer = manufacturerInput.getAttribute("manufacturer");
+
+        String actualManufacturer = driver.findElement(By.xpath("//*[@id='f_o_51']")).getAttribute("value");
         Assertions.assertThat(actualManufacturer).isEqualTo("Dji");
 
-        WebElement getActualPrice = driver.findElement(By.id(priceFromLocator));
-        String actualPrice = priceFromInput.getAttribute("price");
+        String actualPrice = driver.findElement(By.xpath("//*[@id='f_o_8_min']")).getAttribute("value");
         Assertions.assertThat(actualPrice).isEqualTo("300");
 
     }
+
     @After
     public void tearDownDriver() {
         driver.close();
