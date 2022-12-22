@@ -18,7 +18,7 @@ public class WebMulticopterTest {
     }
 
     @Test
-    public void demoTest() throws InterruptedException {
+    public void priceAndManufacturerTest() throws InterruptedException {
         driver.get("https://www.ss.com/lv/");
         String hobbyLocator = "//*[@id='mtd_282509']";
         WebElement hobbySectionLink = driver.findElement(By.xpath(hobbyLocator));
