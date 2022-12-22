@@ -51,7 +51,6 @@ public class WebMulticopterTest {
 
         String actualPrice = driver.findElement(By.xpath("//*[@id='f_o_8_min']")).getAttribute("value");
         Assertions.assertThat(actualPrice).isEqualTo("300");
-
     }
 
     @After
