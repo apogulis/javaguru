@@ -1,4 +1,4 @@
-package lv.javaguru.demo.lecture3;
+/*package lv.javaguru.demo.lecture3;
 
 public class Stock {
     public static void main(String[] args) {
@@ -18,7 +18,7 @@ public class Stock {
             minPrice = currentPrice;
         }
 
-        public static void printInformation() {
+        /*public static void printInformation() {
             System.out.println("Company name: " + companyName);
             System.out.println("Current price: " + currentPrice);
             System.out.println("Minimum price: " + minPrice);
@@ -26,3 +26,5 @@ public class Stock {
         }
     }
 }
+*/
+
