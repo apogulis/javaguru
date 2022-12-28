@@ -4,7 +4,6 @@ import lv.javaguru.demo.lecture7.DriverFactory;
 import lv.javaguru.demo.lecture9.homework.AddToCartPage;
 import lv.javaguru.demo.lecture9.model.ShopUser;
 import org.assertj.core.api.Assertions;
-import org.assertj.core.api.SoftAssertions;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,14 +34,12 @@ public class AddBookToCartTest {
 
         Assertions.assertThat(profilePage.isDisplayed()).isTrue();
         String contactDetails = profilePage.getContactDetails();
-        SoftAssertions soft = new SoftAssertions();
-        soft.assertThat(contactDetails).contains(user.getName());
-        soft.assertThat(contactDetails).contains(user.getLastName());
-        soft.assertThat(contactDetails).contains(user.getEmail());
-        soft.assertThat(contactDetails).contains(user.getPhoneNumber());
-        soft.assertAll();
+        Assertions.assertThat(contactDetails).contains(user.getName());
+        Assertions.assertThat(contactDetails).contains(user.getLastName());
+        Assertions.assertThat(contactDetails).contains(user.getEmail());
+        Assertions.assertThat(contactDetails).contains(user.getPhoneNumber());
 
-        Thread.sleep(15000);
+        Thread.sleep(5000);
 
         AddToCartPage addToCartPage = new AddToCartPage(driver);
         addToCartPage.enterSearchKeyword("kvalitāte");
