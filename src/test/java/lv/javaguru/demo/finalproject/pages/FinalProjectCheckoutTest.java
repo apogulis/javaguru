@@ -6,7 +6,6 @@ import org.assertj.core.api.Assertions;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
@@ -49,8 +48,9 @@ public class FinalProjectCheckoutTest {
         ShoppingCartPage shoppingCartPage = new ShoppingCartPage(driver);
         shoppingCartPage.openShoppingCart();
 
-        String actualItemName = driver.findElement(By.xpath("//a[@class='detailed-cart-item__name-link']")).getText();
-        Assertions.assertThat(actualItemName).isEqualTo("Cietais disks Western Digital, HDD, 5 TB, melna");
+        ProductPage productPage = new ProductPage(driver);
+        String actualItemName = productPage.getCartItemName();
+        Assertions.assertThat(actualItemName).isEqualTo(productPage.expectedItemName);
 
         shoppingCartPage.pressContinueButton();
         Thread.sleep(2500);
@@ -74,8 +74,8 @@ public class FinalProjectCheckoutTest {
         shoppingCartPage.choosePayInStoreOption();
         Thread.sleep(6000);
 
-        String actualTotalPrice = driver.findElement(By.xpath("//span[@class='checkout-order-summary-total__price']")).getText();
-        Assertions.assertThat(actualTotalPrice).isEqualTo("113,00 €");
+        String actualTotalPrice = productPage.getItemTotalPrice();
+        Assertions.assertThat(actualTotalPrice).isEqualTo(productPage.expectedTotalPrice);
 
         System.out.println("Item name: " + actualItemName);
         System.out.println("Total price: " + actualTotalPrice);

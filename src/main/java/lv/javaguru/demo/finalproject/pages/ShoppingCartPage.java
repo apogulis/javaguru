@@ -54,7 +54,7 @@ public class ShoppingCartPage {
 
     public ShoppingCartPage enterFirstName(String firstName) {
         driver.findElement(FIRST_NAME_INPUT).sendKeys(firstName);
-        return this;
+        return null;
     }
 
     public ShoppingCartPage enterLastName(String lastName) {
